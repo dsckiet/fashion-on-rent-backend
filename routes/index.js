@@ -7,6 +7,6 @@ router.post('/register',registerController.register);
 router.post('/login',loginController.login);
 router.get('/me',auth,userController.me);
 router.post('/refresh',refreshController.refresh);
-router.post('/product',auth,productController.store);
+router.post('/product',productController.store);
 
 export default router;  

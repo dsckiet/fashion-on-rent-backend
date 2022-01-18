@@ -25,6 +25,8 @@ const productController = {
         res.json({});
         //const filePath = req.file.path;
         });        
+
+        
     }
     
 }
