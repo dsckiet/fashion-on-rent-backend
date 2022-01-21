@@ -54,6 +54,8 @@ const productController = {
         
         //const filePath = req.file.path;
         });        
+
+        
     }
     
 }
