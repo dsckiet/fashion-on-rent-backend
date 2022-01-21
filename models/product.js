@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const productSchema = new Schema({
     owner_id: {
         type: String,
-        required: true
     },
     type:{
         type: String,
@@ -23,10 +22,10 @@ const productSchema = new Schema({
         required: true
     },
     price:{
-        type: String,
+        type: Number,
         required: true
     },
-    image:{
+    images:{
         type: String,
         required: true
     },
@@ -49,7 +48,7 @@ const productSchema = new Schema({
         required: true
     },
     Pincode: {
-        type: String,
+        type: Number,
         required: true
     }
 

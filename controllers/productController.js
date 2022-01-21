@@ -1,5 +1,6 @@
 const multer = require("multer");
 import path from 'path';
+import { Product } from '../models';
 import CustomErrorHandler from '../services/CustomErrorHandler';
 
 const storage = multer.diskStorage({
@@ -17,12 +18,40 @@ const handleMultipartData = multer({storage , limits: {
 const productController = {
     async store(req,res,next){
         //Multipart form data
-        handleMultipartData(req, res, (err) =>{
+         handleMultipartData(req, res, async(err) =>{
         if(err){
             return next(CustomErrorHandler.serverError("Only 4 photos required"));
         }
-        console.log(req.files);
-        res.json({});
+        const file = req.files;
+        const imageLink = file.map((ele)=>{
+            return ele.path;
+        })
+        //console.log(imageLink);
+        const {userId} = req.user;
+        const {type,name,description,sizes,price,Style_tip,Address,City,Landmark,State,Pincode} = req.body;
+        const product = new Product({
+            owner_id:userId,
+            type,
+            name,
+            description,
+            sizes,
+            price,
+            images: JSON.stringify(imageLink),
+            Style_tip,
+            Address,
+            City,
+            Landmark,
+            State,
+            Pincode
+        })
+        try{
+            const result = await product.save();
+            res.status(201).json({response: "Added Successfully"});
+        }catch(err){
+            return next(err);
+        }
+
+        
         //const filePath = req.file.path;
         });        
     }
