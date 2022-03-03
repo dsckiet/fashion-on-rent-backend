@@ -26,7 +26,7 @@ const productSchema = new Schema({
         required: true
     },
     images:{
-        type: String,
+        type: [String],
         required: true
     },
     Style_tip:{
@@ -50,8 +50,19 @@ const productSchema = new Schema({
     Pincode: {
         type: Number,
         required: true
-    }
-
+    },
+    location: {
+        type: {
+          type: String, 
+          enum: ['Point'], 
+          required: true
+        },
+        coordinates: {
+          type: [Number],
+          required: true
+        }
+    },
+    
 },{timestamps: true})
-
+productSchema.index({ location: "2dsphere" });
 export default mongoose.model('Product',productSchema,'products');

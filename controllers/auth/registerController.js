@@ -4,6 +4,7 @@ import { RefreshToken, User } from '../../models';
 import JwtService from '../../services/JwtService';
 import bcrypt from 'bcrypt';
 import { REFRESH_SECRET } from '../../config';
+
 const registerController = {
     async register(req,res,next){
         //logic
@@ -57,7 +58,7 @@ const registerController = {
         let refresh_token;
         try{
             const result = await user.save();
-
+            //const product
             //Token
             // console.log("ACEES UP");
             access_token = JwtService.sign({_id: result._id,role: result.role, });
