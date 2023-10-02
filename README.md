@@ -1,44 +1,61 @@
 <p align="left">
 	<img width="300" src="https://drive.google.com/uc?export=view&id=1XfLhaaUsef3sD7c46TC_ZoaorKg-uBFM" />
-	<h2 align="left"> < ADD PROJECT TITLE > </h2>
-	<h4 align="left"> < ADD PROJECT DESCRIPTION > <h4>
+	<h2 align="left"> Developer Students KIET Portal </h2>
+	<h4 align="left"> Scalable backend with async job scheduling to Fashion-on-Rent Service <h4>
 </p>
 
----
-[![DOCS](https://img.shields.io/badge/Documentation-see%20docs-green?style=for-the-badge&logo=appveyor)](INSERT_LINK_FOR_DOCS_HERE) 
-  [![UI ](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=for-the-badge&logo=appveyor)](INSERT_UI_LINK_HERE)
 
 
 ## Functionalities
-- [ ]  < ADD FUNCTIONALITY >
-- [ ]  < ADD FUNCTIONALITY >
+
+-   [x] Users auth and role based dashboard
+-   [x] auth and dashboard
+-   [x] Custom Error Handler
+-   [x] CRUD Events
+-   [x] Multer  
+-   [x] Cloudinary Integration
+-   [x] GeoSpatial Search 
+-   [x] Product Claim Route
+-   [x] Event Certificates
+-   [x] Product Availbility through Calender
+-   [ ] Caching
+-   [ ] Rate limitter 
+
 
 <br>
 
+## Technologies
+
+-   MongoDB
+-   ExpressJS
+-   NodeJS
+-   Multer
+-   Cloudinary
 
 ## Instructions to run
 
-* Pre-requisites:
-	-  < add pre-requisite >
-	-  < add pre-requisite >
+-   Pre-requisites:
 
-* Directions to setup/install
+    -   Node.js
+    -   NPM
+
+-   Directions to setup/install
+
 ```bash
-< insert code >
+$ git clone https://github.com/dsckiet/fashion-on-rent-backend
+$ cd fashion-on-rent-backend
+$ vim .env
+# Set values in .env
+$ npm i
 ```
 
-* Directions to execute
+-   Directions to execute
 
 ```bash
-< insert code >
+$ npm run dev
 ```
 
 <br>
-
-## Contributors
-
-* [ < ADD YOUR NAME > ](ADD_PROFILE_URL_HERE)
-
 
 
 <br>
